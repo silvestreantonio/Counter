@@ -1,9 +1,22 @@
 const btn = document.getElementById("darkMode-btn");
+const html = document.querySelector("html")
+
+if(localStorage.getItem("theme") === "dark"){
+  html.classList.add("dark")
+  applyTheme(true)
+}
+
 btn.addEventListener("click", () => {
-  document.querySelector("html").classList.toggle("dark");
-  if (document.querySelector("html").classList.contains("dark")) {
-    btn.textContent = "Light mode";
-  } else {
-    btn.textContent = "Dark mode";
-  }
+  applyTheme(html.classList.toggle("dark"))
 });
+
+
+function applyTheme(isDark) {
+  if(isDark) {
+    btn.textContent = "Light mode"
+    localStorage.setItem("theme", "dark")
+  } else {
+    localStorage.setItem("theme", "light")
+    btn.textContent = "Dark mode"
+  }
+}
