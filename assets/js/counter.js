@@ -1,11 +1,3 @@
-let counterList = [];
-if (localStorage.getItem("counters")) {
-  counterList = JSON.parse(localStorage.getItem("counters"));
-  counterList.forEach((counter) => {
-    creaCounter(counter);
-  });
-}
-
 const insertBtn = document.getElementById("insertCounter-btn");
 
 const infoContainer = document.createElement("div");
@@ -29,6 +21,14 @@ createButton.textContent = "Crea counter";
 
 infoContainer.append(label, input, createButton);
 document.body.appendChild(infoContainer);
+
+let counterList = [];
+if (localStorage.getItem("counters")) {
+  counterList = JSON.parse(localStorage.getItem("counters"));
+  counterList.forEach((counter) => {
+    creaCounter(counter);
+  });
+}
 
 insertBtn.addEventListener("click", function () {
   infoContainer.classList.remove("hidden");
