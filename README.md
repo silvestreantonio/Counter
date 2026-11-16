@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="./assets/img/logo.png" alt="Logo Counter App" width="80" height="80">
+  <img src="./assets/img/logo.png" alt="Logo Counter App" width="160" height="160">
 
   # Multi-Counter Web App
 
